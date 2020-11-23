@@ -1,0 +1,9 @@
+.screen {
+    height: 25vh;
+    width: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #FFF;
+    background-color: var(--color-tomato);
+}

@@ -1,0 +1,9 @@
+.result-screen{
+    height: 19vh;
+    font-size: 8rem;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
