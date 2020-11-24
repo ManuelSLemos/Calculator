@@ -6,11 +6,17 @@ import ComputationScreen from '../ComputationScreen/ComputationScreen';
 import './Screen.css';
 
 class Screen extends Component{
+    constructor(props){
+        super(props);
+        
+    }
+
     render(){
+        const { result, arit } = this.props;
         return(
             <section className="screen">
-                <ResultScreen />
-                <ComputationScreen />
+                <ResultScreen result={result} />
+                <ComputationScreen arit={arit} />
             </section>
         )
     }

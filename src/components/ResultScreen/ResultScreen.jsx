@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 import './ResultScreen.css';
 
 class ResultScreen extends Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <div className="result-screen">
-                3124
+                {this.props.result}
             </div>
         )
     }

@@ -3,11 +3,14 @@ import React, { Component } from 'react'
 import './ComputationScreen.css';
 
 class ComputationScreen extends Component{
+    constructor(props){
+        super(props);
+    }
 
     render() {
         return (
             <section className="computation-screen">
-                3000+100+20+4
+                { this.props.arit }
             </section>
         )
     }
