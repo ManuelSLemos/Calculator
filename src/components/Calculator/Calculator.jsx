@@ -16,6 +16,11 @@ class Calculator extends Component {
             num2: ''
         }
     }
+
+    OnPress = (value) => {
+        console.log(value)
+        this.setState(prevState => ({ num1: prevState.num1 + value }))
+    }
     
     render(){
         const { result, num1, num2, operator } = this.state;
@@ -25,7 +30,7 @@ class Calculator extends Component {
                     <Screen 
                         result={result} 
                         arit={`${num1}${operator}${num2}`} />
-                    <Keypad />
+                    <Keypad onPress={this.OnPress} />
                 </main>
             </Fragment>
         )

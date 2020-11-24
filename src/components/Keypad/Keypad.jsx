@@ -5,7 +5,14 @@ import Button from '../Button/Button';
 
 import './Keypad';
 
-class Keypad extends Component{
+class Keypad extends Component {
+    constructor(props){
+        super(props);
+
+    }
+
+
+
     render() {
         return (
             <section className="keypad">
@@ -16,21 +23,21 @@ class Keypad extends Component{
                     <Button text="/" />
                 </KeypadRow>
                 <KeypadRow>
-                    <Button text="9" />
-                    <Button text="8" />
-                    <Button text="7" />
+                    <Button text="9" onPress={this.props.onPress} />
+                    <Button text="8" onPress={this.props.onPress} />
+                    <Button text="7" onPress={this.props.onPress} />
                     <Button text="*" />
                 </KeypadRow>
                 <KeypadRow>
-                    <Button text="6" />
-                    <Button text="5" />
-                    <Button text="4" />
+                    <Button text="6" onPress={this.props.onPress} />
+                    <Button text="5" onPress={this.props.onPress} />
+                    <Button text="4" onPress={this.props.onPress} />
                     <Button text="-" />
                 </KeypadRow>
                 <KeypadRow>
-                    <Button text="3" />
-                    <Button text="2 " />
-                    <Button text="1" />
+                    <Button text="3" onPress={this.props.onPress} />
+                    <Button text="2" onPress={this.props.onPress} />
+                    <Button text="1" onPress={this.props.onPress} />
                     <Button text="+" />
                 </KeypadRow>
                 <KeypadRow>

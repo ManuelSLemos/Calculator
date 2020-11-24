@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import './Button.css'
 
 class Button extends Component {
-    
-
     constructor(props){
         super(props);
 
@@ -19,9 +17,19 @@ class Button extends Component {
         }
     }
 
+    KeyDown = () => {
+        const { text } = this.props;
+
+        console.log(text);
+        this.props.onPress(text);
+    }
+
     render() {
         return (
-            <button className={this.state.classes}>
+            <button 
+                className={this.state.classes} 
+                onClick={() => this.KeyDown()}
+            >
                 { this.props.text }
             </button>
         )
