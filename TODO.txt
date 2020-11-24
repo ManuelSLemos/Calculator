@@ -1,0 +1,7 @@
+1.- Dejar valor inicial 0 en Result y Num1 (Cuando escribes el primer numero, resetea el 0 en num1)
+
+2.- Gestionar decimales con el '.'
+
+3.- Crear botón % y <-
+
+XXXX.- (OPTATIVO) Hacer operaciones sin pulsar =

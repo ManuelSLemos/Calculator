@@ -9,22 +9,69 @@ class Calculator extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            result: '',
-            num1: '',
+        this.initialState = {
+            result: '0',
+            num1: '0',
             operator: '',
             num2: ''
         }
+
+        this.state = this.initialState;
     }
 
     OnPressNumber = (value) => {
-        console.log(value)
-        this.setState(prevState => ({ num1: prevState.num1 + value }))
+        const { num1, operator } = this.state;
+
+        if ( num1 !== '' && operator !== '' )
+        {
+            this.setState(prevState => ({ num2: prevState.num2 + value }))
+        }
+        else
+        {
+            this.setState(prevState => ({ num1: prevState.num1 + value }))
+        }
+        
     }
 
     OnPressOperator = (value) => {
+        const { num1, operator, num2 } = this.state;
         this.setState({ operator: value })
     }
+
+    OnPressOperatorSpecial = (value) => {
+        let { num1, operator, num2 } = this.state;
+        num1 = Number(num1);
+        num2 = Number(num2);
+
+        if(value === '='){
+            let result = 0
+
+            if( operator === '+' ){
+                result = num1 + num2;
+            }
+            else if (operator === '-' ) {
+                result = num1 - num2;
+            }
+            else if ( operator === '*' ) {
+                result = num1 * num2;
+            }
+            else if ( operator === '/') {
+                result = num1 / num2;
+            }
+
+            this.setState({
+                result: result,
+                num1: result,
+                operator: '',
+                num2: ''
+            })
+        }
+
+        if(value === 'C'){
+            this.setState(this.initialState)
+        }
+    }
+
     
     render(){
         const { result, num1, num2, operator } = this.state;
@@ -36,7 +83,8 @@ class Calculator extends Component {
                         arit={`${num1}${operator}${num2}`} />
                     <Keypad 
                         onPressNumber={this.OnPressNumber} 
-                        OnPressOperator={this.OnPressOperator}
+                        onPressOperator={this.OnPressOperator}
+                        onPressOperatorSpecial={this.OnPressOperatorSpecial}
                     />
                 </main>
             </Fragment>
