@@ -11,12 +11,11 @@ class Screen extends Component{
         
     }
 
-    render(){
-        const { result, arit } = this.props;
+    render() {
         return(
             <section className="screen">
-                <ResultScreen result={result} />
-                <ComputationScreen arit={arit} />
+                <ResultScreen />
+                <ComputationScreen />
             </section>
         )
     }

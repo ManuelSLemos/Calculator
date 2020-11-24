@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './ResultScreen.css';
 
@@ -10,10 +11,14 @@ class ResultScreen extends Component{
     render(){
         return(
             <div className="result-screen">
-                {this.props.result}
+                { this.props.result }
             </div>
         )
     }
 }
 
-export default ResultScreen;
+const mapStateToProps = (state) =>{
+    return { result: state.result }
+}
+
+export default connect(mapStateToProps)(ResultScreen);

@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 import './ComputationScreen.css';
 
-class ComputationScreen extends Component{
+class ComputationScreen extends Component {
     constructor(props){
         super(props);
     }
 
     render() {
+        const { num1, operator, num2 } = this.props;
         return (
             <section className="computation-screen">
-                { this.props.arit }
+                { `${num1}${operator}${num2}` }
             </section>
         )
     }
 }
 
-export default ComputationScreen;
+const mapStateToProps = (state) => {
+    return { 
+        num1: state.num1,
+        num2: state.num2,
+        operator: state.operator
+    }
+}
+
+export default connect(mapStateToProps)(ComputationScreen);
