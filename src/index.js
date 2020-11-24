@@ -1,15 +1,20 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import './index.css';
 import App from './App';
+import store from './store/index';
+import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  // Provider es el Componente de React que conecta Redux a toda la aplicación, le pasamos store que es donde tenemos toda la info guardada.
+  <Provider store={store}>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

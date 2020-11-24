@@ -1,0 +1,22 @@
+1.- yarn add redux react-redux
+
+---- Configuración de Redux -----
+2.- mkdir src/store y touch store/index.js
+3.- mkdir src/store/reducer y touch reducer/index.js
+4.- importar reducer a store y pasar por parametro en el createStore
+
+----- Implementación con React -----
+5.- En el index.js de React, configuramos el Provider y el store por props
+
+---- Leer Store desde un Component o Container -----
+6.- importamos el connect()
+7.- crear mapStateToProps con el trozo de estado que queremos
+    7.1. De esa forma, tendremos this.props.nombre
+8.- en el export default usar connect (state) (component)
+
+--- Modificar el Store -----
+9.- mkdir src/action y touch/index.js
+    9.1- export con el dispatch de la acción
+10.- En el reducer, creamos un if para capturar el action y realizamos una acción.
+11.- Crear un mapDispatchToProps con la acción que queremos realizar
+12.- Añadirlo en el connect como segunda condición

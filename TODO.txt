@@ -5,3 +5,6 @@
 3.- Crear botón % y <-
 
 XXXX.- (OPTATIVO) Hacer operaciones sin pulsar =
+
+
+yarn add redux react-redux
